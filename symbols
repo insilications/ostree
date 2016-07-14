@@ -1,6 +1,8 @@
 libostree-1.so.1:LIBOSTREE_2016.3
 libostree-1.so.1:LIBOSTREE_2016.4
 libostree-1.so.1:LIBOSTREE_2016.5
+libostree-1.so.1:LIBOSTREE_2016.6
+libostree-1.so.1:LIBOSTREE_2016.7
 libostree-1.so.1:ostree_async_progress_finish
 libostree-1.so.1:ostree_async_progress_get_status
 libostree-1.so.1:ostree_async_progress_get_type
@@ -80,6 +82,7 @@ libostree-1.so.1:ostree_gpg_verify_result_get
 libostree-1.so.1:ostree_gpg_verify_result_get_all
 libostree-1.so.1:ostree_gpg_verify_result_get_type
 libostree-1.so.1:ostree_gpg_verify_result_lookup
+libostree-1.so.1:ostree_gpg_verify_result_require_valid_signature
 libostree-1.so.1:ostree_hash_object_name
 libostree-1.so.1:ostree_metadata_variant_type
 libostree-1.so.1:ostree_mutable_tree_ensure_dir
@@ -102,6 +105,7 @@ libostree-1.so.1:ostree_object_to_string
 libostree-1.so.1:ostree_object_type_from_string
 libostree-1.so.1:ostree_object_type_to_string
 libostree-1.so.1:ostree_parse_refspec
+libostree-1.so.1:ostree_raw_file_to_archive_z2_stream
 libostree-1.so.1:ostree_raw_file_to_content_stream
 libostree-1.so.1:ostree_repo_abort_transaction
 libostree-1.so.1:ostree_repo_add_gpg_signature_summary
@@ -155,6 +159,7 @@ libostree-1.so.1:ostree_repo_get_remote_boolean_option
 libostree-1.so.1:ostree_repo_get_remote_list_option
 libostree-1.so.1:ostree_repo_get_remote_option
 libostree-1.so.1:ostree_repo_get_type
+libostree-1.so.1:ostree_repo_gpg_verify_data
 libostree-1.so.1:ostree_repo_has_object
 libostree-1.so.1:ostree_repo_import_archive_to_mtree
 libostree-1.so.1:ostree_repo_import_object_from
@@ -191,6 +196,7 @@ libostree-1.so.1:ostree_repo_remote_add
 libostree-1.so.1:ostree_repo_remote_change
 libostree-1.so.1:ostree_repo_remote_delete
 libostree-1.so.1:ostree_repo_remote_fetch_summary
+libostree-1.so.1:ostree_repo_remote_fetch_summary_with_options
 libostree-1.so.1:ostree_repo_remote_get_gpg_verify
 libostree-1.so.1:ostree_repo_remote_get_gpg_verify_summary
 libostree-1.so.1:ostree_repo_remote_get_url
@@ -198,6 +204,7 @@ libostree-1.so.1:ostree_repo_remote_gpg_import
 libostree-1.so.1:ostree_repo_remote_list
 libostree-1.so.1:ostree_repo_remote_list_refs
 libostree-1.so.1:ostree_repo_resolve_rev
+libostree-1.so.1:ostree_repo_resolve_rev_ext
 libostree-1.so.1:ostree_repo_scan_hardlinks
 libostree-1.so.1:ostree_repo_set_cache_dir
 libostree-1.so.1:ostree_repo_set_disable_fsync

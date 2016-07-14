@@ -10,4 +10,5 @@ libgsystem.so.0
 liblzma.so.5
 libpthread.so.0
 libsoup-2.4.so.1
+libsystemd.so.0
 libz.so.1
