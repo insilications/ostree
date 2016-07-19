@@ -4,7 +4,7 @@
 #
 Name     : ostree
 Version  : 2016.7
-Release  : 3
+Release  : 4
 URL      : http://pkgs.fedoraproject.org/repo/pkgs/ostree/ostree-2016.7.tar.xz/08f4530d7ce13931fc17bd123f78ad2c/ostree-2016.7.tar.xz
 Source0  : http://pkgs.fedoraproject.org/repo/pkgs/ostree/ostree-2016.7.tar.xz/08f4530d7ce13931fc17bd123f78ad2c/ostree-2016.7.tar.xz
 Summary  : Git for operating system binaries
