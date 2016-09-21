@@ -3,6 +3,7 @@ libostree-1.so.1:LIBOSTREE_2016.4
 libostree-1.so.1:LIBOSTREE_2016.5
 libostree-1.so.1:LIBOSTREE_2016.6
 libostree-1.so.1:LIBOSTREE_2016.7
+libostree-1.so.1:LIBOSTREE_2016.8
 libostree-1.so.1:ostree_async_progress_finish
 libostree-1.so.1:ostree_async_progress_get_status
 libostree-1.so.1:ostree_async_progress_get_type
@@ -24,8 +25,10 @@ libostree-1.so.1:ostree_bootconfig_parser_write
 libostree-1.so.1:ostree_bootconfig_parser_write_at
 libostree-1.so.1:ostree_chain_input_stream_get_type
 libostree-1.so.1:ostree_chain_input_stream_new
+libostree-1.so.1:ostree_checksum_b64_from_bytes
 libostree-1.so.1:ostree_checksum_b64_inplace_from_bytes
 libostree-1.so.1:ostree_checksum_b64_inplace_to_bytes
+libostree-1.so.1:ostree_checksum_b64_to_bytes
 libostree-1.so.1:ostree_checksum_bytes_peek
 libostree-1.so.1:ostree_checksum_bytes_peek_validate
 libostree-1.so.1:ostree_checksum_file
@@ -110,6 +113,7 @@ libostree-1.so.1:ostree_raw_file_to_content_stream
 libostree-1.so.1:ostree_repo_abort_transaction
 libostree-1.so.1:ostree_repo_add_gpg_signature_summary
 libostree-1.so.1:ostree_repo_append_gpg_signature
+libostree-1.so.1:ostree_repo_checkout_at
 libostree-1.so.1:ostree_repo_checkout_gc
 libostree-1.so.1:ostree_repo_checkout_tree
 libostree-1.so.1:ostree_repo_checkout_tree_at
