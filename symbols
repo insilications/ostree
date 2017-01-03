@@ -1,3 +1,4 @@
+libostree-1.so.1:LIBOSTREE_2016.14
 libostree-1.so.1:LIBOSTREE_2016.3
 libostree-1.so.1:LIBOSTREE_2016.4
 libostree-1.so.1:LIBOSTREE_2016.5
@@ -225,6 +226,7 @@ libostree-1.so.1:ostree_repo_traverse_commit_union
 libostree-1.so.1:ostree_repo_traverse_new_reachable
 libostree-1.so.1:ostree_repo_verify_commit
 libostree-1.so.1:ostree_repo_verify_commit_ext
+libostree-1.so.1:ostree_repo_verify_commit_for_remote
 libostree-1.so.1:ostree_repo_verify_summary
 libostree-1.so.1:ostree_repo_write_archive_to_mtree
 libostree-1.so.1:ostree_repo_write_commit
