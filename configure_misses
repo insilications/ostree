@@ -1,0 +1,9 @@
+Configure miss: if gcc supports flag -Werror=parenthesis in envvar CFLAGS
+Configure miss: -fsanitize=address in CFLAGS
+Configure miss: whether renameat2 is declared
+Configure miss: whether  is declared
+Configure miss: gpgme-pthread >= 1.1.8
+Configure miss: libselinux >= 2.1.13
+Configure miss: mount >= 2.23.0
+Configure miss: grub2-mkconfig
+Configure miss: grub-mkconfig

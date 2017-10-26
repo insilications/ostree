@@ -5,6 +5,7 @@ libostree-1.so.1:LIBOSTREE_2016.5
 libostree-1.so.1:LIBOSTREE_2016.6
 libostree-1.so.1:LIBOSTREE_2016.7
 libostree-1.so.1:LIBOSTREE_2016.8
+libostree-1.so.1:LIBOSTREE_2017.1
 libostree-1.so.1:ostree_async_progress_finish
 libostree-1.so.1:ostree_async_progress_get_status
 libostree-1.so.1:ostree_async_progress_get_type
@@ -188,6 +189,7 @@ libostree-1.so.1:ostree_repo_new_for_sysroot_path
 libostree-1.so.1:ostree_repo_open
 libostree-1.so.1:ostree_repo_prepare_transaction
 libostree-1.so.1:ostree_repo_prune
+libostree-1.so.1:ostree_repo_prune_from_reachable
 libostree-1.so.1:ostree_repo_prune_static_deltas
 libostree-1.so.1:ostree_repo_pull
 libostree-1.so.1:ostree_repo_pull_default_console_progress_changed
