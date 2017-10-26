@@ -6,3 +6,4 @@ libcap-dev
 libgpg-error-dev
 libassuan-dev
 libarchive-devel
+parallel
