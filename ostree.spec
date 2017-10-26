@@ -4,7 +4,7 @@
 #
 Name     : ostree
 Version  : lib.2017.12
-Release  : 11
+Release  : 12
 URL      : https://github.com/ostreedev/ostree/releases/download/v2017.12/libostree-2017.12.tar.xz
 Source0  : https://github.com/ostreedev/ostree/releases/download/v2017.12/libostree-2017.12.tar.xz
 Summary  : Git for operating system binaries
@@ -12,12 +12,13 @@ Group    : Development/Tools
 License  : BSD-2-Clause LGPL-2.0 LGPL-2.1
 Requires: ostree-bin
 Requires: ostree-config
-Requires: ostree-lib
 Requires: ostree-data
+Requires: ostree-lib
 Requires: ostree-doc
 BuildRequires : bison
 BuildRequires : docbook-xml
-BuildRequires : gobject-introspection-dev
+BuildRequires : gjs
+BuildRequires : gjs-dev
 BuildRequires : gpgme-dev
 BuildRequires : gtk-doc
 BuildRequires : gtk-doc-dev
@@ -26,6 +27,7 @@ BuildRequires : libassuan-dev
 BuildRequires : libcap-dev
 BuildRequires : libgpg-error-dev
 BuildRequires : libxslt-bin
+BuildRequires : parallel
 BuildRequires : pkgconfig(e2p)
 BuildRequires : pkgconfig(fuse)
 BuildRequires : pkgconfig(glib-2.0)
@@ -35,6 +37,7 @@ BuildRequires : pkgconfig(liblzma)
 BuildRequires : pkgconfig(libsoup-2.4)
 BuildRequires : pkgconfig(libsystemd)
 BuildRequires : pkgconfig(zlib)
+BuildRequires : util-linux
 
 %description
 libostree
@@ -104,7 +107,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1509031785
+export SOURCE_DATE_EPOCH=1509032457
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -116,7 +119,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make check ||:
 
 %install
-export SOURCE_DATE_EPOCH=1509031785
+export SOURCE_DATE_EPOCH=1509032457
 rm -rf %{buildroot}
 %make_install
 

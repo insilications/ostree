@@ -9,4 +9,3 @@ Configure miss: avahi-client >= 0.6.31 avahi-glib >= 0.6.31
 Configure miss: mount >= 2.23.0
 Configure miss: grub2-mkconfig
 Configure miss: grub-mkconfig
-Configure miss: gjs
