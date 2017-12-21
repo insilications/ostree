@@ -9,6 +9,8 @@ libostree-1.so.1:LIBOSTREE_2017.1
 libostree-1.so.1:LIBOSTREE_2017.10
 libostree-1.so.1:LIBOSTREE_2017.11
 libostree-1.so.1:LIBOSTREE_2017.12
+libostree-1.so.1:LIBOSTREE_2017.13
+libostree-1.so.1:LIBOSTREE_2017.14
 libostree-1.so.1:LIBOSTREE_2017.2
 libostree-1.so.1:LIBOSTREE_2017.3
 libostree-1.so.1:LIBOSTREE_2017.4
@@ -51,6 +53,7 @@ libostree-1.so.1:ostree_checksum_bytes_peek_validate
 libostree-1.so.1:ostree_checksum_file
 libostree-1.so.1:ostree_checksum_file_async
 libostree-1.so.1:ostree_checksum_file_async_finish
+libostree-1.so.1:ostree_checksum_file_at
 libostree-1.so.1:ostree_checksum_file_from_input
 libostree-1.so.1:ostree_checksum_from_bytes
 libostree-1.so.1:ostree_checksum_from_bytes_v
@@ -134,6 +137,7 @@ libostree-1.so.1:ostree_repo_abort_transaction
 libostree-1.so.1:ostree_repo_add_gpg_signature_summary
 libostree-1.so.1:ostree_repo_append_gpg_signature
 libostree-1.so.1:ostree_repo_checkout_at
+libostree-1.so.1:ostree_repo_checkout_at_options_set_devino
 libostree-1.so.1:ostree_repo_checkout_gc
 libostree-1.so.1:ostree_repo_checkout_tree
 libostree-1.so.1:ostree_repo_checkout_tree_at
