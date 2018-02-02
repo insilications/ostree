@@ -4,7 +4,7 @@
 #
 Name     : ostree
 Version  : 2017.15
-Release  : 14
+Release  : 15
 URL      : https://github.com/ostreedev/ostree/releases/download/v2017.15/libostree-2017.15.tar.xz
 Source0  : https://github.com/ostreedev/ostree/releases/download/v2017.15/libostree-2017.15.tar.xz
 Summary  : Git for operating system binaries
