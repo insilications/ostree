@@ -19,6 +19,8 @@ libostree-1.so.1:LIBOSTREE_2017.6
 libostree-1.so.1:LIBOSTREE_2017.7
 libostree-1.so.1:LIBOSTREE_2017.8
 libostree-1.so.1:LIBOSTREE_2017.9
+libostree-1.so.1:LIBOSTREE_2018.1
+libostree-1.so.1:LIBOSTREE_2018.2
 libostree-1.so.1:ostree_async_progress_finish
 libostree-1.so.1:ostree_async_progress_get
 libostree-1.so.1:ostree_async_progress_get_status
@@ -67,6 +69,7 @@ libostree-1.so.1:ostree_checksum_to_bytes
 libostree-1.so.1:ostree_checksum_to_bytes_v
 libostree-1.so.1:ostree_cmd__private__
 libostree-1.so.1:ostree_cmp_checksum_bytes
+libostree-1.so.1:ostree_commit_get_content_checksum
 libostree-1.so.1:ostree_commit_get_parent
 libostree-1.so.1:ostree_commit_get_timestamp
 libostree-1.so.1:ostree_content_file_parse
