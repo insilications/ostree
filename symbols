@@ -21,6 +21,7 @@ libostree-1.so.1:LIBOSTREE_2017.8
 libostree-1.so.1:LIBOSTREE_2017.9
 libostree-1.so.1:LIBOSTREE_2018.1
 libostree-1.so.1:LIBOSTREE_2018.2
+libostree-1.so.1:LIBOSTREE_2018.3
 libostree-1.so.1:ostree_async_progress_finish
 libostree-1.so.1:ostree_async_progress_get
 libostree-1.so.1:ostree_async_progress_get_status
@@ -90,7 +91,9 @@ libostree-1.so.1:ostree_deployment_get_osname
 libostree-1.so.1:ostree_deployment_get_type
 libostree-1.so.1:ostree_deployment_get_unlocked
 libostree-1.so.1:ostree_deployment_hash
+libostree-1.so.1:ostree_deployment_is_pinned
 libostree-1.so.1:ostree_deployment_new
+libostree-1.so.1:ostree_deployment_origin_remove_transient_state
 libostree-1.so.1:ostree_deployment_set_bootconfig
 libostree-1.so.1:ostree_deployment_set_bootserial
 libostree-1.so.1:ostree_deployment_set_index
@@ -296,6 +299,7 @@ libostree-1.so.1:ostree_sysroot_cleanup
 libostree-1.so.1:ostree_sysroot_deploy_tree
 libostree-1.so.1:ostree_sysroot_deployment_set_kargs
 libostree-1.so.1:ostree_sysroot_deployment_set_mutable
+libostree-1.so.1:ostree_sysroot_deployment_set_pinned
 libostree-1.so.1:ostree_sysroot_deployment_unlock
 libostree-1.so.1:ostree_sysroot_ensure_initialized
 libostree-1.so.1:ostree_sysroot_get_booted_deployment
