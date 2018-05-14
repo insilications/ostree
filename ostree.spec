@@ -4,7 +4,7 @@
 #
 Name     : ostree
 Version  : 2018.4
-Release  : 21
+Release  : 22
 URL      : https://github.com/ostreedev/ostree/releases/download/v2018.4/libostree-2018.4.tar.xz
 Source0  : https://github.com/ostreedev/ostree/releases/download/v2018.4/libostree-2018.4.tar.xz
 Summary  : Git for operating system binaries
@@ -107,7 +107,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1525215731
+export SOURCE_DATE_EPOCH=1526260361
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -119,7 +119,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make check ||:
 
 %install
-export SOURCE_DATE_EPOCH=1525215731
+export SOURCE_DATE_EPOCH=1526260361
 rm -rf %{buildroot}
 %make_install
 
