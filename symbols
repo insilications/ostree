@@ -24,6 +24,7 @@ libostree-1.so.1:LIBOSTREE_2018.2
 libostree-1.so.1:LIBOSTREE_2018.3
 libostree-1.so.1:LIBOSTREE_2018.5
 libostree-1.so.1:LIBOSTREE_2018.6
+libostree-1.so.1:LIBOSTREE_2018.7
 libostree-1.so.1:ostree_async_progress_finish
 libostree-1.so.1:ostree_async_progress_get
 libostree-1.so.1:ostree_async_progress_get_status
@@ -129,8 +130,10 @@ libostree-1.so.1:ostree_gpg_verify_result_lookup
 libostree-1.so.1:ostree_gpg_verify_result_require_valid_signature
 libostree-1.so.1:ostree_hash_object_name
 libostree-1.so.1:ostree_metadata_variant_type
+libostree-1.so.1:ostree_mutable_tree_check_error
 libostree-1.so.1:ostree_mutable_tree_ensure_dir
 libostree-1.so.1:ostree_mutable_tree_ensure_parent_dirs
+libostree-1.so.1:ostree_mutable_tree_fill_empty_from_dirtree
 libostree-1.so.1:ostree_mutable_tree_get_contents_checksum
 libostree-1.so.1:ostree_mutable_tree_get_files
 libostree-1.so.1:ostree_mutable_tree_get_metadata_checksum
@@ -138,6 +141,7 @@ libostree-1.so.1:ostree_mutable_tree_get_subdirs
 libostree-1.so.1:ostree_mutable_tree_get_type
 libostree-1.so.1:ostree_mutable_tree_lookup
 libostree-1.so.1:ostree_mutable_tree_new
+libostree-1.so.1:ostree_mutable_tree_new_from_checksum
 libostree-1.so.1:ostree_mutable_tree_replace_file
 libostree-1.so.1:ostree_mutable_tree_set_contents_checksum
 libostree-1.so.1:ostree_mutable_tree_set_metadata_checksum
