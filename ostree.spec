@@ -4,7 +4,7 @@
 #
 Name     : ostree
 Version  : 2018.7
-Release  : 25
+Release  : 26
 URL      : https://github.com/ostreedev/ostree/releases/download/v2018.7/libostree-2018.7.tar.xz
 Source0  : https://github.com/ostreedev/ostree/releases/download/v2018.7/libostree-2018.7.tar.xz
 Summary  : Git for operating system binaries
@@ -86,6 +86,14 @@ Provides: ostree-devel
 dev components for the ostree package.
 
 
+%package extras
+Summary: extras components for the ostree package.
+Group: Default
+
+%description extras
+extras components for the ostree package.
+
+
 %package lib
 Summary: lib components for the ostree package.
 Group: Libraries
@@ -120,7 +128,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532306549
+export SOURCE_DATE_EPOCH=1533328124
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -132,12 +140,12 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make check ||:
 
 %install
-export SOURCE_DATE_EPOCH=1532306549
+export SOURCE_DATE_EPOCH=1533328124
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/ostree
 cp COPYING %{buildroot}/usr/share/doc/ostree/COPYING
-cp libglnx/COPYING %{buildroot}/usr/share/doc/ostree/libglnx_COPYING
 cp bsdiff/LICENSE %{buildroot}/usr/share/doc/ostree/bsdiff_LICENSE
+cp libglnx/COPYING %{buildroot}/usr/share/doc/ostree/libglnx_COPYING
 %make_install
 
 %files
@@ -154,7 +162,7 @@ cp bsdiff/LICENSE %{buildroot}/usr/share/doc/ostree/bsdiff_LICENSE
 
 %files config
 %defattr(-,root,root,-)
-/usr/lib/systemd/system-generators/ostree-system-generator
+%exclude /usr/lib/systemd/system-generators/ostree-system-generator
 /usr/lib/systemd/system/ostree-finalize-staged.service
 /usr/lib/systemd/system/ostree-prepare-root.service
 /usr/lib/systemd/system/ostree-remount.service
@@ -196,6 +204,10 @@ cp bsdiff/LICENSE %{buildroot}/usr/share/doc/ostree/bsdiff_LICENSE
 /usr/include/ostree-1/ostree.h
 /usr/lib64/libostree-1.so
 /usr/lib64/pkgconfig/ostree-1.pc
+
+%files extras
+%defattr(-,root,root,-)
+/usr/lib/systemd/system-generators/ostree-system-generator
 
 %files lib
 %defattr(-,root,root,-)
