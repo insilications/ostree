@@ -4,7 +4,7 @@
 #
 Name     : ostree
 Version  : 2018.8
-Release  : 28
+Release  : 29
 URL      : https://github.com/ostreedev/ostree/releases/download/v2018.8/libostree-2018.8.tar.xz
 Source0  : https://github.com/ostreedev/ostree/releases/download/v2018.8/libostree-2018.8.tar.xz
 Summary  : Git for operating system binaries
