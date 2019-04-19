@@ -4,7 +4,7 @@
 #
 Name     : ostree
 Version  : 2019.1
-Release  : 30
+Release  : 31
 URL      : https://github.com/ostreedev/ostree/releases/download/v2019.1/libostree-2019.1.tar.xz
 Source0  : https://github.com/ostreedev/ostree/releases/download/v2019.1/libostree-2019.1.tar.xz
 Summary  : Git for operating system binaries
@@ -55,7 +55,6 @@ Requires: ostree-data = %{version}-%{release}
 Requires: ostree-libexec = %{version}-%{release}
 Requires: ostree-config = %{version}-%{release}
 Requires: ostree-license = %{version}-%{release}
-Requires: ostree-man = %{version}-%{release}
 Requires: ostree-services = %{version}-%{release}
 
 %description bin
@@ -85,6 +84,7 @@ Requires: ostree-lib = %{version}-%{release}
 Requires: ostree-bin = %{version}-%{release}
 Requires: ostree-data = %{version}-%{release}
 Provides: ostree-devel = %{version}-%{release}
+Requires: ostree = %{version}-%{release}
 
 %description dev
 dev components for the ostree package.
@@ -151,7 +151,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1547240497
+export SOURCE_DATE_EPOCH=1555699791
+export LDFLAGS="${LDFLAGS} -fno-lto"
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -163,7 +164,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make check ||:
 
 %install
-export SOURCE_DATE_EPOCH=1547240497
+export SOURCE_DATE_EPOCH=1555699791
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ostree
 cp COPYING %{buildroot}/usr/share/package-licenses/ostree/COPYING
