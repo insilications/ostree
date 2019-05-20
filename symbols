@@ -26,6 +26,7 @@ libostree-1.so.1:LIBOSTREE_2018.5
 libostree-1.so.1:LIBOSTREE_2018.6
 libostree-1.so.1:LIBOSTREE_2018.7
 libostree-1.so.1:LIBOSTREE_2018.9
+libostree-1.so.1:LIBOSTREE_2019.2
 libostree-1.so.1:ostree_async_progress_finish
 libostree-1.so.1:ostree_async_progress_get
 libostree-1.so.1:ostree_async_progress_get_status
@@ -234,6 +235,7 @@ libostree-1.so.1:ostree_repo_finder_result_freev
 libostree-1.so.1:ostree_repo_finder_result_get_type
 libostree-1.so.1:ostree_repo_finder_result_new
 libostree-1.so.1:ostree_repo_fsck_object
+libostree-1.so.1:ostree_repo_get_bootloader
 libostree-1.so.1:ostree_repo_get_collection_id
 libostree-1.so.1:ostree_repo_get_config
 libostree-1.so.1:ostree_repo_get_default_repo_finders
