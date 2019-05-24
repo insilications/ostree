@@ -4,7 +4,7 @@
 #
 Name     : ostree
 Version  : 2019.2
-Release  : 32
+Release  : 33
 URL      : https://github.com/ostreedev/ostree/releases/download/v2019.2/libostree-2019.2.tar.xz
 Source0  : https://github.com/ostreedev/ostree/releases/download/v2019.2/libostree-2019.2.tar.xz
 Summary  : Git for operating system binaries
@@ -28,8 +28,6 @@ BuildRequires : gtk-doc-dev
 BuildRequires : libarchive-devel
 BuildRequires : libassuan-dev
 BuildRequires : libcap-dev
-BuildRequires : libgpg-error-dev
-BuildRequires : libgpg-error-extras
 BuildRequires : libxslt-bin
 BuildRequires : parallel
 BuildRequires : pkgconfig(e2p)
@@ -151,9 +149,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1558391277
+export SOURCE_DATE_EPOCH=1558731039
 export GCC_IGNORE_WERROR=1
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -165,7 +166,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make check ||:
 
 %install
-export SOURCE_DATE_EPOCH=1558391277
+export SOURCE_DATE_EPOCH=1558731039
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ostree
 cp COPYING %{buildroot}/usr/share/package-licenses/ostree/COPYING

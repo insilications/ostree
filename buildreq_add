@@ -3,8 +3,6 @@
 gpgme-dev
 bison
 libcap-dev
-libgpg-error-dev
-libgpg-error-extras
 libassuan-dev
 libarchive-devel
 parallel
