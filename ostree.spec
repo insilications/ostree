@@ -4,7 +4,7 @@
 #
 Name     : ostree
 Version  : 2019.6
-Release  : 36
+Release  : 37
 URL      : https://github.com/ostreedev/ostree/releases/download/v2019.6/libostree-2019.6.tar.xz
 Source0  : https://github.com/ostreedev/ostree/releases/download/v2019.6/libostree-2019.6.tar.xz
 Summary  : Git for operating system binaries
@@ -150,7 +150,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578627033
+export SOURCE_DATE_EPOCH=1579197649
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -167,7 +167,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make check ||:
 
 %install
-export SOURCE_DATE_EPOCH=1578627033
+export SOURCE_DATE_EPOCH=1579197649
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ostree
 cp %{_builddir}/libostree-2019.6/COPYING %{buildroot}/usr/share/package-licenses/ostree/ba8966e2473a9969bdcab3dc82274c817cfd98a1
