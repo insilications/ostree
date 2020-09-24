@@ -4,7 +4,7 @@
 #
 Name     : ostree
 Version  : 2020.5
-Release  : 39
+Release  : 40
 URL      : https://github.com/ostreedev/ostree/releases/download/v2020.5/libostree-2020.5.tar.xz
 Source0  : https://github.com/ostreedev/ostree/releases/download/v2020.5/libostree-2020.5.tar.xz
 Summary  : Git for operating system binaries
