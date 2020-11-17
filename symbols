@@ -32,6 +32,8 @@ libostree-1.so.1:LIBOSTREE_2019.4
 libostree-1.so.1:LIBOSTREE_2019.6
 libostree-1.so.1:LIBOSTREE_2020.1
 libostree-1.so.1:LIBOSTREE_2020.4
+libostree-1.so.1:LIBOSTREE_2020.7
+libostree-1.so.1:LIBOSTREE_2020.8
 libostree-1.so.1:ostree_async_progress_copy_state
 libostree-1.so.1:ostree_async_progress_finish
 libostree-1.so.1:ostree_async_progress_get
@@ -49,11 +51,13 @@ libostree-1.so.1:ostree_async_progress_set_uint64
 libostree-1.so.1:ostree_async_progress_set_variant
 libostree-1.so.1:ostree_bootconfig_parser_clone
 libostree-1.so.1:ostree_bootconfig_parser_get
+libostree-1.so.1:ostree_bootconfig_parser_get_overlay_initrds
 libostree-1.so.1:ostree_bootconfig_parser_get_type
 libostree-1.so.1:ostree_bootconfig_parser_new
 libostree-1.so.1:ostree_bootconfig_parser_parse
 libostree-1.so.1:ostree_bootconfig_parser_parse_at
 libostree-1.so.1:ostree_bootconfig_parser_set
+libostree-1.so.1:ostree_bootconfig_parser_set_overlay_initrds
 libostree-1.so.1:ostree_bootconfig_parser_write
 libostree-1.so.1:ostree_bootconfig_parser_write_at
 libostree-1.so.1:ostree_break_hardlink
@@ -279,6 +283,7 @@ libostree-1.so.1:ostree_repo_get_remote_boolean_option
 libostree-1.so.1:ostree_repo_get_remote_list_option
 libostree-1.so.1:ostree_repo_get_remote_option
 libostree-1.so.1:ostree_repo_get_type
+libostree-1.so.1:ostree_repo_gpg_sign_data
 libostree-1.so.1:ostree_repo_gpg_verify_data
 libostree-1.so.1:ostree_repo_has_object
 libostree-1.so.1:ostree_repo_hash
@@ -292,6 +297,7 @@ libostree-1.so.1:ostree_repo_list_commit_objects_starting_with
 libostree-1.so.1:ostree_repo_list_objects
 libostree-1.so.1:ostree_repo_list_refs
 libostree-1.so.1:ostree_repo_list_refs_ext
+libostree-1.so.1:ostree_repo_list_static_delta_indexes
 libostree-1.so.1:ostree_repo_list_static_delta_names
 libostree-1.so.1:ostree_repo_load_commit
 libostree-1.so.1:ostree_repo_load_file
@@ -347,7 +353,10 @@ libostree-1.so.1:ostree_repo_set_ref_immediate
 libostree-1.so.1:ostree_repo_sign_commit
 libostree-1.so.1:ostree_repo_sign_delta
 libostree-1.so.1:ostree_repo_static_delta_execute_offline
+libostree-1.so.1:ostree_repo_static_delta_execute_offline_with_signature
 libostree-1.so.1:ostree_repo_static_delta_generate
+libostree-1.so.1:ostree_repo_static_delta_reindex
+libostree-1.so.1:ostree_repo_static_delta_verify_signature
 libostree-1.so.1:ostree_repo_transaction_set_collection_ref
 libostree-1.so.1:ostree_repo_transaction_set_ref
 libostree-1.so.1:ostree_repo_transaction_set_refspec
@@ -410,6 +419,7 @@ libostree-1.so.1:ostree_sign_summary
 libostree-1.so.1:ostree_sysroot_cleanup
 libostree-1.so.1:ostree_sysroot_cleanup_prune_repo
 libostree-1.so.1:ostree_sysroot_deploy_tree
+libostree-1.so.1:ostree_sysroot_deploy_tree_with_options
 libostree-1.so.1:ostree_sysroot_deployment_set_kargs
 libostree-1.so.1:ostree_sysroot_deployment_set_mutable
 libostree-1.so.1:ostree_sysroot_deployment_set_pinned
@@ -444,7 +454,9 @@ libostree-1.so.1:ostree_sysroot_query_deployments_for
 libostree-1.so.1:ostree_sysroot_repo
 libostree-1.so.1:ostree_sysroot_set_mount_namespace_in_use
 libostree-1.so.1:ostree_sysroot_simple_write_deployment
+libostree-1.so.1:ostree_sysroot_stage_overlay_initrd
 libostree-1.so.1:ostree_sysroot_stage_tree
+libostree-1.so.1:ostree_sysroot_stage_tree_with_options
 libostree-1.so.1:ostree_sysroot_try_lock
 libostree-1.so.1:ostree_sysroot_unload
 libostree-1.so.1:ostree_sysroot_unlock
