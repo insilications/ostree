@@ -1,11 +1,15 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
-gpgme-dev
+attr-dev
 bison
-libcap-dev
-libassuan-dev
-libarchive-devel
-parallel
 gjs
 gjs-dev
+glib
+gnupg
+gpgme-dev
+gsettings-desktop-schemas
+libarchive-devel
+libassuan-dev
+libcap-dev
+parallel
 util-linux

@@ -34,6 +34,7 @@ libostree-1.so.1:LIBOSTREE_2020.1
 libostree-1.so.1:LIBOSTREE_2020.4
 libostree-1.so.1:LIBOSTREE_2020.7
 libostree-1.so.1:LIBOSTREE_2020.8
+libostree-1.so.1:LIBOSTREE_2021.1
 libostree-1.so.1:ostree_async_progress_copy_state
 libostree-1.so.1:ostree_async_progress_finish
 libostree-1.so.1:ostree_async_progress_get
@@ -97,6 +98,7 @@ libostree-1.so.1:ostree_commit_get_content_checksum
 libostree-1.so.1:ostree_commit_get_object_sizes
 libostree-1.so.1:ostree_commit_get_parent
 libostree-1.so.1:ostree_commit_get_timestamp
+libostree-1.so.1:ostree_commit_metadata_for_bootable
 libostree-1.so.1:ostree_commit_sizes_entry_copy
 libostree-1.so.1:ostree_commit_sizes_entry_free
 libostree-1.so.1:ostree_commit_sizes_entry_get_type
@@ -452,6 +454,7 @@ libostree-1.so.1:ostree_sysroot_origin_new_from_refspec
 libostree-1.so.1:ostree_sysroot_prepare_cleanup
 libostree-1.so.1:ostree_sysroot_query_deployments_for
 libostree-1.so.1:ostree_sysroot_repo
+libostree-1.so.1:ostree_sysroot_require_booted_deployment
 libostree-1.so.1:ostree_sysroot_set_mount_namespace_in_use
 libostree-1.so.1:ostree_sysroot_simple_write_deployment
 libostree-1.so.1:ostree_sysroot_stage_overlay_initrd
