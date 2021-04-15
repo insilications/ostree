@@ -35,6 +35,7 @@ libostree-1.so.1:LIBOSTREE_2020.4
 libostree-1.so.1:LIBOSTREE_2020.7
 libostree-1.so.1:LIBOSTREE_2020.8
 libostree-1.so.1:LIBOSTREE_2021.1
+libostree-1.so.1:LIBOSTREE_2021.2
 libostree-1.so.1:ostree_async_progress_copy_state
 libostree-1.so.1:ostree_async_progress_finish
 libostree-1.so.1:ostree_async_progress_get
@@ -106,6 +107,8 @@ libostree-1.so.1:ostree_commit_sizes_entry_new
 libostree-1.so.1:ostree_content_file_parse
 libostree-1.so.1:ostree_content_file_parse_at
 libostree-1.so.1:ostree_content_stream_parse
+libostree-1.so.1:ostree_content_writer_finish
+libostree-1.so.1:ostree_content_writer_get_type
 libostree-1.so.1:ostree_create_directory_metadata
 libostree-1.so.1:ostree_deployment_clone
 libostree-1.so.1:ostree_deployment_equal
@@ -392,6 +395,9 @@ libostree-1.so.1:ostree_repo_write_metadata_finish
 libostree-1.so.1:ostree_repo_write_metadata_stream_trusted
 libostree-1.so.1:ostree_repo_write_metadata_trusted
 libostree-1.so.1:ostree_repo_write_mtree
+libostree-1.so.1:ostree_repo_write_regfile
+libostree-1.so.1:ostree_repo_write_regfile_inline
+libostree-1.so.1:ostree_repo_write_symlink
 libostree-1.so.1:ostree_sepolicy_fscreatecon_cleanup
 libostree-1.so.1:ostree_sepolicy_get_csum
 libostree-1.so.1:ostree_sepolicy_get_label
