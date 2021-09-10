@@ -37,6 +37,7 @@ libostree-1.so.1:LIBOSTREE_2020.8
 libostree-1.so.1:LIBOSTREE_2021.1
 libostree-1.so.1:LIBOSTREE_2021.2
 libostree-1.so.1:LIBOSTREE_2021.3
+libostree-1.so.1:LIBOSTREE_2021.4
 libostree-1.so.1:ostree_async_progress_copy_state
 libostree-1.so.1:ostree_async_progress_finish
 libostree-1.so.1:ostree_async_progress_get
@@ -342,6 +343,7 @@ libostree-1.so.1:ostree_repo_remote_change
 libostree-1.so.1:ostree_repo_remote_delete
 libostree-1.so.1:ostree_repo_remote_fetch_summary
 libostree-1.so.1:ostree_repo_remote_fetch_summary_with_options
+libostree-1.so.1:ostree_repo_remote_get_gpg_keys
 libostree-1.so.1:ostree_repo_remote_get_gpg_verify
 libostree-1.so.1:ostree_repo_remote_get_gpg_verify_summary
 libostree-1.so.1:ostree_repo_remote_get_url
@@ -362,6 +364,7 @@ libostree-1.so.1:ostree_repo_set_disable_fsync
 libostree-1.so.1:ostree_repo_set_ref_immediate
 libostree-1.so.1:ostree_repo_sign_commit
 libostree-1.so.1:ostree_repo_sign_delta
+libostree-1.so.1:ostree_repo_signature_verify_commit_data
 libostree-1.so.1:ostree_repo_static_delta_execute_offline
 libostree-1.so.1:ostree_repo_static_delta_execute_offline_with_signature
 libostree-1.so.1:ostree_repo_static_delta_generate
