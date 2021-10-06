@@ -38,6 +38,7 @@ libostree-1.so.1:LIBOSTREE_2021.1
 libostree-1.so.1:LIBOSTREE_2021.2
 libostree-1.so.1:LIBOSTREE_2021.3
 libostree-1.so.1:LIBOSTREE_2021.4
+libostree-1.so.1:LIBOSTREE_2021.5
 libostree-1.so.1:ostree_async_progress_copy_state
 libostree-1.so.1:ostree_async_progress_finish
 libostree-1.so.1:ostree_async_progress_get
@@ -184,6 +185,7 @@ libostree-1.so.1:ostree_mutable_tree_get_type
 libostree-1.so.1:ostree_mutable_tree_lookup
 libostree-1.so.1:ostree_mutable_tree_new
 libostree-1.so.1:ostree_mutable_tree_new_from_checksum
+libostree-1.so.1:ostree_mutable_tree_new_from_commit
 libostree-1.so.1:ostree_mutable_tree_remove
 libostree-1.so.1:ostree_mutable_tree_replace_file
 libostree-1.so.1:ostree_mutable_tree_set_contents_checksum
@@ -414,6 +416,7 @@ libostree-1.so.1:ostree_sepolicy_get_path
 libostree-1.so.1:ostree_sepolicy_get_type
 libostree-1.so.1:ostree_sepolicy_new
 libostree-1.so.1:ostree_sepolicy_new_at
+libostree-1.so.1:ostree_sepolicy_new_from_commit
 libostree-1.so.1:ostree_sepolicy_restorecon
 libostree-1.so.1:ostree_sepolicy_setfscreatecon
 libostree-1.so.1:ostree_sign_add_pk
