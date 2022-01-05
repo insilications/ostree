@@ -4,3 +4,4 @@ libsoup-2.4
 glib-2.0
 libgsystem
 fuse
+fuse3

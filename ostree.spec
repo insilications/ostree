@@ -4,7 +4,7 @@
 #
 Name     : ostree
 Version  : 2022.1
-Release  : 47
+Release  : 48
 URL      : https://github.com/ostreedev/ostree/releases/download/v2022.1/libostree-2022.1.tar.xz
 Source0  : https://github.com/ostreedev/ostree/releases/download/v2022.1/libostree-2022.1.tar.xz
 Summary  : Git for operating system binaries
@@ -37,6 +37,7 @@ BuildRequires : libxslt-bin
 BuildRequires : parallel
 BuildRequires : pkgconfig(e2p)
 BuildRequires : pkgconfig(fuse)
+BuildRequires : pkgconfig(fuse3)
 BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(libcurl)
 BuildRequires : pkgconfig(libgsystem)
@@ -161,7 +162,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641396988
+export SOURCE_DATE_EPOCH=1641398923
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -183,7 +184,7 @@ export XDG_DATA_DIRS="$HOME/.local/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}"
 make VERBOSE=1 V=1 check || :
 
 %install
-export SOURCE_DATE_EPOCH=1641396988
+export SOURCE_DATE_EPOCH=1641398923
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ostree
 cp %{_builddir}/libostree-2022.1/COPYING %{buildroot}/usr/share/package-licenses/ostree/ba8966e2473a9969bdcab3dc82274c817cfd98a1
