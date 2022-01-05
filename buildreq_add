@@ -2,14 +2,22 @@
 # picked up automatically. One name per line, no whitespace.
 attr-dev
 bison
+docbook-xml
 gjs
 gjs-dev
 glib
 gnupg
 gpgme-dev
 gsettings-desktop-schemas
+gtk-doc
+gtk-doc-dev
 libarchive-devel
 libassuan-dev
 libcap-dev
+libxslt-bin
 parallel
+PyYAML
 util-linux
+xz
+xz-dev
+xz-staticdev

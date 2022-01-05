@@ -1,5 +1,6 @@
 PKG_NAME := ostree
-URL = https://github.com/ostreedev/ostree/releases/download/v2022.1/libostree-2022.1.tar.xz
+URL = https://github.com/ostreedev/ostree.git
 ARCHIVES = 
+ARCHIVES_GIT = 
 
 include ../common/Makefile.common
