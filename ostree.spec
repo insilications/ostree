@@ -5,16 +5,22 @@
 %define keepstatic 1
 Name     : ostree
 Version  : 2022.1
-Release  : 303
+Release  : 305
 URL      : file:///aot/build/clearlinux/packages/ostree/ostree-v2022.1.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/ostree/ostree-v2022.1.tar.gz
 Summary  : Git for operating system binaries
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.0 LGPL-2.1
+Requires: ostree-bin = %{version}-%{release}
+Requires: ostree-config = %{version}-%{release}
+Requires: ostree-data = %{version}-%{release}
+Requires: ostree-lib = %{version}-%{release}
+Requires: ostree-libexec = %{version}-%{release}
+Requires: ostree-man = %{version}-%{release}
+Requires: ostree-services = %{version}-%{release}
 BuildRequires : PyYAML
 BuildRequires : attr-dev
 BuildRequires : bison
-BuildRequires : buildreq-meson
 BuildRequires : docbook-xml
 BuildRequires : gjs
 BuildRequires : gjs-dev
@@ -58,6 +64,99 @@ documentation, we will use the term "OSTree", since it's slightly shorter, and
 changing all documentation at once is impractical. We expect to transition to
 the new name over time.
 
+%package bin
+Summary: bin components for the ostree package.
+Group: Binaries
+Requires: ostree-data = %{version}-%{release}
+Requires: ostree-libexec = %{version}-%{release}
+Requires: ostree-config = %{version}-%{release}
+Requires: ostree-services = %{version}-%{release}
+
+%description bin
+bin components for the ostree package.
+
+
+%package config
+Summary: config components for the ostree package.
+Group: Default
+
+%description config
+config components for the ostree package.
+
+
+%package data
+Summary: data components for the ostree package.
+Group: Data
+
+%description data
+data components for the ostree package.
+
+
+%package dev
+Summary: dev components for the ostree package.
+Group: Development
+Requires: ostree-lib = %{version}-%{release}
+Requires: ostree-bin = %{version}-%{release}
+Requires: ostree-data = %{version}-%{release}
+Provides: ostree-devel = %{version}-%{release}
+Requires: ostree = %{version}-%{release}
+
+%description dev
+dev components for the ostree package.
+
+
+%package extras
+Summary: extras components for the ostree package.
+Group: Default
+
+%description extras
+extras components for the ostree package.
+
+
+%package lib
+Summary: lib components for the ostree package.
+Group: Libraries
+Requires: ostree-data = %{version}-%{release}
+Requires: ostree-libexec = %{version}-%{release}
+
+%description lib
+lib components for the ostree package.
+
+
+%package libexec
+Summary: libexec components for the ostree package.
+Group: Default
+Requires: ostree-config = %{version}-%{release}
+
+%description libexec
+libexec components for the ostree package.
+
+
+%package man
+Summary: man components for the ostree package.
+Group: Default
+
+%description man
+man components for the ostree package.
+
+
+%package services
+Summary: services components for the ostree package.
+Group: Systemd services
+
+%description services
+services components for the ostree package.
+
+
+%package staticdev
+Summary: staticdev components for the ostree package.
+Group: Default
+Requires: ostree-dev = %{version}-%{release}
+
+%description staticdev
+staticdev components for the ostree package.
+
+
 %prep
 %setup -q -n ostree
 cd %{_builddir}/ostree
@@ -68,7 +167,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1642516799
+export SOURCE_DATE_EPOCH=1642517406
 export GCC_IGNORE_WERROR=1
 ## altflags_pgo content
 ## pgo generate
@@ -145,27 +244,20 @@ export GSETTINGS_SCHEMA_DIR="/var/cache/glib-2.0/schemas"
 sd -r '\s--dirty\s' ' ' .
 sd -r 'git describe' 'git describe --abbrev=0' .
 
-echo PGO Phase 1
-export CFLAGS="${CFLAGS_GENERATE}"
-export CXXFLAGS="${CXXFLAGS_GENERATE}"
-export FFLAGS="${FFLAGS_GENERATE}"
-export FCFLAGS="${FCFLAGS_GENERATE}"
-export LDFLAGS="${LDFLAGS_GENERATE}"
-export ASMFLAGS="${ASMFLAGS_GENERATE}"
-export LIBS="${LIBS_GENERATE}"
-%autogen  --enable-static \
+echo PGO Phase 2
+export CFLAGS="${CFLAGS_USE}"
+export CXXFLAGS="${CXXFLAGS_USE}"
+export FFLAGS="${FFLAGS_USE}"
+export FCFLAGS="${FCFLAGS_USE}"
+export LDFLAGS="${LDFLAGS_USE}"
+export ASMFLAGS="${ASMFLAGS_USE}"
+export LIBS="${LIBS_USE}"
+ %autogen --enable-static \
 --enable-shared
 make  %{?_smp_mflags}    V=1 VERBOSE=1
-## profile_payload start
-unset LD_LIBRARY_PATH
-unset LIBRARY_PATH
-make -j1 check V=1 VERBOSE=1 || :
-export LD_LIBRARY_PATH="/usr/local/nvidia/lib64:/usr/local/nvidia/lib64/gbm:/usr/local/nvidia/lib64/vdpau:/usr/local/nvidia/lib64/xorg/modules/drivers:/usr/local/nvidia/lib64/xorg/modules/extensions:/usr/local/cuda/lib64:/usr/lib64/haswell:/usr/lib64/dri:/usr/lib64:/usr/lib:/aot/intel/oneapi/compiler/latest/linux/compiler/lib/intel64_lin:/aot/intel/oneapi/compiler/latest/linux/lib:/aot/intel/oneapi/mkl/latest/lib/intel64:/aot/intel/oneapi/tbb/latest/lib/intel64/gcc4.8:/usr/share:/usr/lib64/wine:/usr/local/nvidia/lib32:/usr/local/nvidia/lib32/vdpau:/usr/lib32:/usr/lib32/wine"
-export LIBRARY_PATH="/usr/local/nvidia/lib64:/usr/local/nvidia/lib64/gbm:/usr/local/nvidia/lib64/vdpau:/usr/local/nvidia/lib64/xorg/modules/drivers:/usr/local/nvidia/lib64/xorg/modules/extensions:/usr/local/cuda/lib64:/usr/lib64/haswell:/usr/lib64/dri:/usr/lib64:/usr/lib:/aot/intel/oneapi/compiler/latest/linux/compiler/lib/intel64_lin:/aot/intel/oneapi/compiler/latest/linux/lib:/aot/intel/oneapi/mkl/latest/lib/intel64:/aot/intel/oneapi/tbb/latest/lib/intel64/gcc4.8:/usr/share:/usr/lib64/wine:/usr/local/nvidia/lib32:/usr/local/nvidia/lib32/vdpau:/usr/lib32:/usr/lib32/wine"
-## profile_payload end
 
 %install
-export SOURCE_DATE_EPOCH=1642516799
+export SOURCE_DATE_EPOCH=1642517406
 rm -rf %{buildroot}
 export GCC_IGNORE_WERROR=1
 ## altflags_pgo content
@@ -240,14 +332,140 @@ export GTK_USE_PORTAL=1
 export DESKTOP_SESSION=plasma
 export GSETTINGS_SCHEMA_DIR="/var/cache/glib-2.0/schemas"
 ## altflags_pgo end
-export CFLAGS="${CFLAGS_GENERATE}"
-export CXXFLAGS="${CXXFLAGS_GENERATE}"
-export FFLAGS="${FFLAGS_GENERATE}"
-export FCFLAGS="${FCFLAGS_GENERATE}"
-export LDFLAGS="${LDFLAGS_GENERATE}"
-export ASMFLAGS="${ASMFLAGS_GENERATE}"
-export LIBS="${LIBS_GENERATE}"
+export CFLAGS="${CFLAGS_USE}"
+export CXXFLAGS="${CXXFLAGS_USE}"
+export FFLAGS="${FFLAGS_USE}"
+export FCFLAGS="${FCFLAGS_USE}"
+export LDFLAGS="${LDFLAGS_USE}"
+export ASMFLAGS="${ASMFLAGS_USE}"
+export LIBS="${LIBS_USE}"
 %make_install
 
 %files
 %defattr(-,root,root,-)
+
+%files bin
+%defattr(-,root,root,-)
+/usr/bin/ostree
+/usr/bin/rofiles-fuse
+
+%files config
+%defattr(-,root,root,-)
+/usr/lib/tmpfiles.d/ostree-tmpfiles.conf
+
+%files data
+%defattr(-,root,root,-)
+/usr/lib64/girepository-1.0/OSTree-1.0.typelib
+/usr/share/bash-completion/completions/ostree
+/usr/share/gir-1.0/*.gir
+/usr/share/ostree/trusted.gpg.d/README-gpg
+
+%files dev
+%defattr(-,root,root,-)
+/usr/include/ostree-1/ostree-async-progress.h
+/usr/include/ostree-1/ostree-autocleanups.h
+/usr/include/ostree-1/ostree-bootconfig-parser.h
+/usr/include/ostree-1/ostree-content-writer.h
+/usr/include/ostree-1/ostree-core.h
+/usr/include/ostree-1/ostree-deployment.h
+/usr/include/ostree-1/ostree-diff.h
+/usr/include/ostree-1/ostree-dummy-enumtypes.h
+/usr/include/ostree-1/ostree-gpg-verify-result.h
+/usr/include/ostree-1/ostree-kernel-args.h
+/usr/include/ostree-1/ostree-mutable-tree.h
+/usr/include/ostree-1/ostree-ref.h
+/usr/include/ostree-1/ostree-remote.h
+/usr/include/ostree-1/ostree-repo-deprecated.h
+/usr/include/ostree-1/ostree-repo-file.h
+/usr/include/ostree-1/ostree-repo-finder-avahi.h
+/usr/include/ostree-1/ostree-repo-finder-config.h
+/usr/include/ostree-1/ostree-repo-finder-mount.h
+/usr/include/ostree-1/ostree-repo-finder-override.h
+/usr/include/ostree-1/ostree-repo-finder.h
+/usr/include/ostree-1/ostree-repo-os.h
+/usr/include/ostree-1/ostree-repo.h
+/usr/include/ostree-1/ostree-sepolicy.h
+/usr/include/ostree-1/ostree-sign-ed25519.h
+/usr/include/ostree-1/ostree-sign.h
+/usr/include/ostree-1/ostree-sysroot-upgrader.h
+/usr/include/ostree-1/ostree-sysroot.h
+/usr/include/ostree-1/ostree-types.h
+/usr/include/ostree-1/ostree-version.h
+/usr/include/ostree-1/ostree.h
+/usr/lib/ostree/ostree-prepare-root
+/usr/lib/ostree/ostree-remount
+/usr/lib64/libostree-1.la
+/usr/lib64/libostree-1.so
+/usr/lib64/pkgconfig/ostree-1.pc
+
+%files extras
+%defattr(-,root,root,-)
+/usr/lib/systemd/system-generators/ostree-system-generator
+
+%files lib
+%defattr(-,root,root,-)
+/usr/lib64/libostree-1.so.1
+/usr/lib64/libostree-1.so.1.0.0
+
+%files libexec
+%defattr(-,root,root,-)
+/usr/libexec/libostree/grub2-15_ostree
+/usr/libexec/libostree/ostree-trivial-httpd
+
+%files man
+%defattr(0644,root,root,0755)
+/usr/share/man/man1/ostree-admin-cleanup.1
+/usr/share/man/man1/ostree-admin-config-diff.1
+/usr/share/man/man1/ostree-admin-deploy.1
+/usr/share/man/man1/ostree-admin-init-fs.1
+/usr/share/man/man1/ostree-admin-instutil.1
+/usr/share/man/man1/ostree-admin-os-init.1
+/usr/share/man/man1/ostree-admin-pin.1
+/usr/share/man/man1/ostree-admin-set-origin.1
+/usr/share/man/man1/ostree-admin-status.1
+/usr/share/man/man1/ostree-admin-switch.1
+/usr/share/man/man1/ostree-admin-undeploy.1
+/usr/share/man/man1/ostree-admin-unlock.1
+/usr/share/man/man1/ostree-admin-upgrade.1
+/usr/share/man/man1/ostree-admin.1
+/usr/share/man/man1/ostree-cat.1
+/usr/share/man/man1/ostree-checkout.1
+/usr/share/man/man1/ostree-checksum.1
+/usr/share/man/man1/ostree-commit.1
+/usr/share/man/man1/ostree-config.1
+/usr/share/man/man1/ostree-create-usb.1
+/usr/share/man/man1/ostree-diff.1
+/usr/share/man/man1/ostree-export.1
+/usr/share/man/man1/ostree-find-remotes.1
+/usr/share/man/man1/ostree-fsck.1
+/usr/share/man/man1/ostree-gpg-sign.1
+/usr/share/man/man1/ostree-init.1
+/usr/share/man/man1/ostree-log.1
+/usr/share/man/man1/ostree-ls.1
+/usr/share/man/man1/ostree-prune.1
+/usr/share/man/man1/ostree-pull-local.1
+/usr/share/man/man1/ostree-pull.1
+/usr/share/man/man1/ostree-refs.1
+/usr/share/man/man1/ostree-remote.1
+/usr/share/man/man1/ostree-reset.1
+/usr/share/man/man1/ostree-rev-parse.1
+/usr/share/man/man1/ostree-show.1
+/usr/share/man/man1/ostree-sign.1
+/usr/share/man/man1/ostree-static-delta.1
+/usr/share/man/man1/ostree-summary.1
+/usr/share/man/man1/ostree-trivial-httpd.1
+/usr/share/man/man1/ostree.1
+/usr/share/man/man1/rofiles-fuse.1
+/usr/share/man/man5/ostree.repo-config.5
+/usr/share/man/man5/ostree.repo.5
+
+%files services
+%defattr(-,root,root,-)
+/usr/lib/systemd/system/ostree-finalize-staged.path
+/usr/lib/systemd/system/ostree-finalize-staged.service
+/usr/lib/systemd/system/ostree-prepare-root.service
+/usr/lib/systemd/system/ostree-remount.service
+
+%files staticdev
+%defattr(-,root,root,-)
+/usr/lib64/libostree-1.a
